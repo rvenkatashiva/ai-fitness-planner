@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fitness Planner - Transform Your Body</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        <div class="glass-card">
+            <div class="header-section">
+                <div class="icon-wrapper">
+                    <svg class="main-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.5 9.5L12 13 3.5 9.5M12 13v9m0-9l8.5-3.5V19M12 13L3.5 9.5V19"/>
+                    </svg>
+                </div>
+                <h1 class="main-title">AI Fitness Planner</h1>
+                <p class="subtitle">Personalized Workout & Nutrition Plans for Students</p>
+            </div>
+
+            <form method="post" action="/result" class="fitness-form">
+                <div class="form-section">
+                    <h3 class="section-title">Personal Information</h3>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="age">Age</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="age" name="age" placeholder="25" required min="13" max="100">
+                                <span class="input-icon">📅</span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="height">Height (cm)</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="height" name="height" placeholder="170" required min="100" max="250">
+                                <span class="input-icon">📏</span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="weight">Weight (kg)</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="weight" name="weight" placeholder="70" required min="30" max="200">
+                                <span class="input-icon">⚖️</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title">Preferences & Goals</h3>
+                    
+                    <div class="select-group">
+                        <label for="gender">Gender</label>
+                        <div class="custom-select-wrapper">
+                            <select id="gender" name="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <span class="select-icon">🚹</span>
+                        </div>
+                    </div>
+
+                    <div class="select-group">
+                        <label for="activity">Activity Level</label>
+                        <div class="custom-select-wrapper">
+                            <select id="activity" name="activity">
+                                <option value="low">Low Activity (Desk job, minimal exercise)</option>
+                                <option value="medium">Medium Activity (Light exercise 3-4x/week)</option>
+                                <option value="high">High Activity (Intense exercise 5-7x/week)</option>
+                            </select>
+                            <span class="select-icon">🏃</span>
+                        </div>
+                    </div>
+
+                    <div class="select-group">
+                        <label for="goal">Fitness Goal</label>
+                        <div class="custom-select-wrapper">
+                            <select id="goal" name="goal">
+                                <option value="loss">Weight Loss - Get Lean</option>
+                                <option value="gain">Muscle Gain - Build Strength</option>
+                                <option value="maintain">Maintain - Stay Fit</option>
+                            </select>
+                            <span class="select-icon">🎯</span>
+                        </div>
+                    </div>
+
+                    <div class="select-group">
+                        <label for="gym">Gym Access</label>
+                        <div class="custom-select-wrapper">
+                            <select id="gym" name="gym">
+                                <option value="yes">Yes - I have gym access</option>
+                                <option value="no">No - Home workouts only</option>
+                            </select>
+                            <span class="select-icon">🏋️</span>
+                        </div>
+                    </div>
+
+                    <div class="select-group">
+                        <label for="veg">Diet Preference</label>
+                        <div class="custom-select-wrapper">
+                            <select id="veg" name="veg">
+                                <option value="yes">Vegetarian</option>
+                                <option value="no">Non-Vegetarian</option>
+                            </select>
+                            <span class="select-icon">🥗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Generate My Personalized Plan</span>
+                    <span class="btn-icon">🚀</span>
+                </button>
+            </form>
+
+            <div class="footer-section">
+                <a href="/chatbot" class="coach-link">
+                    <span class="link-icon">🤖</span>
+                    <span>Chat with AI Fitness Coach</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

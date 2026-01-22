@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personalized Fitness Plan</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container results-container">
+        <div class="glass-card results-card">
+            <div class="header-section">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h1 class="main-title">Your AI-Generated Plan</h1>
+                <p class="subtitle">Customized just for you</p>
+            </div>
+
+            <div class="results-content">
+                <div class="result-card calories-card">
+                    <div class="card-header">
+                        <div class="card-icon">🔥</div>
+                        <h3>Daily Calorie Target</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="calorie-display">
+                            <span class="calorie-number">{{ calories }}</span>
+                            <span class="calorie-unit">kcal/day</span>
+                        </div>
+                        <div class="calorie-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Protein</span>
+                                <span class="breakdown-bar protein-bar"></span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Carbs</span>
+                                <span class="breakdown-bar carbs-bar"></span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Fats</span>
+                                <span class="breakdown-bar fats-bar"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card workout-card">
+                    <div class="card-header">
+                        <div class="card-icon">🏋️</div>
+                        <h3>Workout Plan</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-text">{{ workout }}</div>
+                    </div>
+                </div>
+
+                <div class="result-card diet-card">
+                    <div class="card-header">
+                        <div class="card-icon">🍽️</div>
+                        <h3>Nutrition Plan</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-text">{{ diet }}</div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h4>💡 Pro Tips</h4>
+                    <ul class="tips-list">
+                        <li>Stay consistent with your workout schedule</li>
+                        <li>Track your progress weekly</li>
+                        <li>Stay hydrated - drink at least 8 glasses of water daily</li>
+                        <li>Get 7-9 hours of quality sleep</li>
+                        <li>Adjust plan as needed based on your progress</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="/" class="secondary-btn">
+                    <span>← Create New Plan</span>
+                </a>
+                <a href="/chatbot" class="primary-btn">
+                    <span>Chat with Coach</span>
+                    <span>🤖</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

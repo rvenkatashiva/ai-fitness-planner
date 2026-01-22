@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fitness Coach - Chat</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container chat-container">
+        <div class="glass-card chat-card">
+            <div class="header-section chat-header">
+                <div class="coach-avatar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                </div>
+                <div class="coach-info">
+                    <h1 class="main-title">AI Fitness Coach</h1>
+                    <p class="subtitle">Ask me about diet, workouts, or motivation</p>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Online</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Hey there! I'm your AI Fitness Coach. I can help you with:</p>
+                        <ul>
+                            <li>Workout routines and exercise tips</li>
+                            <li>Nutrition advice and meal planning</li>
+                            <li>Motivation and fitness guidance</li>
+                            <li>Form corrections and injury prevention</li>
+                        </ul>
+                        <p>What would you like to know?</p>
+                    </div>
+                </div>
+
+                {% if reply %}
+                <div class="message user-message">
+                    <div class="message-content">
+                        <p>{{ message }}</p>
+                    </div>
+                    <div class="message-avatar user-avatar">👤</div>
+                </div>
+
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>{{ reply }}</p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="quick-questions">
+                <div class="quick-title">Quick Questions:</div>
+                <div class="quick-buttons">
+                    <button class="quick-btn" onclick="fillQuestion(this)">Best exercises for abs?</button>
+                    <button class="quick-btn" onclick="fillQuestion(this)">How to gain muscle?</button>
+                    <button class="quick-btn" onclick="fillQuestion(this)">Meal prep tips?</button>
+                    <button class="quick-btn" onclick="fillQuestion(this)">Pre-workout nutrition?</button>
+                </div>
+            </div>
+
+            <form method="post" class="chat-form">
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        id="messageInput"
+                        name="message" 
+                        placeholder="Type your question here..." 
+                        required
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="send-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
+            <div class="footer-section">
+                <a href="/" class="back-link">
+                    <span>← Back to Fitness Planner</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fillQuestion(btn) {
+            document.getElementById('messageInput').value = btn.textContent;
+            document.getElementById('messageInput').focus();
+        }
+
+        // Auto-scroll to bottom of chat
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.querySelector('.chat-messages');
+            if (chatMessages) {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
